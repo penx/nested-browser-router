@@ -1,6 +1,6 @@
 {
   "name": "nested-browser-router",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Base project I use for creating distributable React components",
   "main": "lib/index.js",
   "module": "es/index.js",
