@@ -44,7 +44,7 @@ const nestedHistory = (history, bn) => {
 const NestedBrowserRouter = withRouter(class extends React.Component {
   static propTypes = {
     children: PropTypes.node,
-    history: PropTypes.shapeOf({
+    history: PropTypes.shape({
       createHref: PropTypes.func,
       push: PropTypes.func,
       listen: PropTypes.func,

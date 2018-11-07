@@ -28,3 +28,35 @@ function App() {
 ## Why?
 
 React Router doesn't support nesting BrowserRouter, but sometimes you need to set a basename for a subsection of your application.
+
+
+### Broken example
+
+The following does not work with React Router - try clicking Home and Sub in the two nav bars:
+
+```jsx
+function App() {
+  return (
+    <BrowserRouter>
+      <>
+        <Link to="/">Home</Link>
+        <Link to="/sub">Sub</Link>
+        <Switch>
+          <Route exact path="/" render={() => <Now text="Home" />} />
+          <Route exact path="/sub" render={() => <Now text="Sub" />} />
+        </Switch>
+        <BrowserRouter basepath="">
+          <>
+            <Link to="/">Home</Link>
+            <Link to="/sub">Sub</Link>
+            <Switch>
+              <Route exact path="/" render={() => <Now text="Home" />} />
+              <Route exact path="/sub" render={() => <Now text="Sub" />} />
+            </Switch>
+          </>
+        </BrowserRouter>
+      </>
+    </BrowserRouter>
+  );
+}
+```
